@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link rel="icon" href="{% static '/img/fav/cropped-favicon-192x192.png' %}" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="{% static '/img/fav/cropped-favicon-180x180.png' %}" />
+<title>Triatlón Rotary Valdivia | 2021</title>
+<meta content="Triatlon Rotary Valdivia - 2021" name="description">
+<meta content="valdivia valdiviacl chile deporte natacion swim correr run biclicleta bicycle turismo sur 2021 region de los rios recreacion espacios viajes naturaleza" name="keywords">
+<link href="{% static '/css/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static '/css/mystyles.css' %}" rel="stylesheet">
+<link href="{% static 'fonts/moderat/moderat.css' %}" rel="stylesheet">
+</head>
+<body>
+<style>
+@keyframes zoom {
+from {
+-moz-transform: scale(1);
+transform: scale(1);
+-webkit-transform: scale(1);
+-ms-transform: scale(1);
+-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1.0, M12=0, M21=0, M22=1.0, SizingMethod='auto expand')";
+filter: progid:DXImageTransform.Microsoft.Matrix(M11=1.0, M12=0, M21=0, M22=1.0, SizingMethod='auto expand');
+}
+to {
+-moz-transform: scale(1.1);
+transform: scale(1.1);
+-webkit-transform: scale(1.1);
+-ms-transform: scale(1.1);
+-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1.1, M12=0, M21=0, M22=1.1, SizingMethod='auto expand')";
+filter: progid:DXImageTransform.Microsoft.Matrix(M11=1.1, M12=0, M21=0, M22=1.1, SizingMethod='auto expand');
+}
+}
+.jumbotron{
+background: none;
+opacity: 1;
+-webkit-animation: zoom 30s ease-in-out infinite alternate;
+-moz-animation: zoom 30s ease-in-out infinite alternate;
+-o-animation: zoom 30s ease-in-out infinite alternate;
+-ms-animation: zoom 30s ease-in-out infinite alternate;
+animation: zoom 30s ease-in-out infinite alternate;
+}
+.jumbotron:before {
+opacity: 1;
+background:url(../static/img/bg.jpg) no-repeat center center fixed;
+-webkit-background-size: cover !important;
+-moz-background-size: cover !important;
+background-size: cover !important;
+}
+</style>
+{% block content %}
+{% endblock %}
+</body>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+<script>
+function getTimeRemaining(endtime){
+var t = Date.parse(endtime) - Date.parse(new Date());
+var seconds = Math.floor( (t/1000) % 60 );
+var minutes = Math.floor( (t/1000/60) % 60 );
+var hours = Math.floor( (t/(1000*60*60)) % 24 );
+var days = Math.floor( t/(1000*60*60*24) );
+return {
+'total': t,
+'days': days,
+'hours': hours,
+'minutes': minutes,
+'seconds': seconds
+};
+}
+function initializeClock(id, endtime){
+var clock = document.getElementById(id);
+var daysSpan = clock.querySelector('.days');
+var hoursSpan = clock.querySelector('.hours');
+var minutesSpan = clock.querySelector('.minutes');
+var secondsSpan = clock.querySelector('.seconds');
+function updateClock(){
+var t = getTimeRemaining(endtime);
+daysSpan.innerHTML = t.days;
+hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+if(t.total<=0){
+clearInterval(timeinterval);
+}
+}
+updateClock();
+var timeinterval = setInterval(updateClock,1000);
+}
+var deadline = 'February 6 2021 21:00:00 UTC-3';
+initializeClock('countdown', deadline);
+</script>
+</html>

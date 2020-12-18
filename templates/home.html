@@ -1,0 +1,36 @@
+{% extends "skeleton.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="jumbotron d-flex align-items-center">
+<div class="container text-center ">
+<img class="triangle-x opacityxx pb-5" width="600" src={% static 'img/logo.svg' %}>
+<div class="text-center opacityxx pb-1">faltan:</div>
+
+<div id="countdown">  
+<div class="countdown-section">
+<span class="h1 days">-</span>
+<div class="text-center">días</div>
+</div>
+<div class="countdown-section">
+<span class="h1 hours">-</span>
+<div class="text-center">horas</div>
+</div>
+<div class="countdown-section">
+<span class="h1 minutes"></span>
+<div class="text-center">minutos</div>
+</div>
+<div class="countdown-section">
+<span class="h1 seconds"></span>
+<div class="text-center">segundos</div>
+</div>
+</div>
+
+</div>
+</div>	
+</div>	
+
+
+
+{% endblock %}
