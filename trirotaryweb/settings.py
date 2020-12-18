@@ -39,8 +39,7 @@ SECRET_KEY = '6di8@p-)l7f_1vydq6!3-u@9dtq0qj=*6+09$039vdkuz=oq@7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-
-ALLOWED_HOSTS = [u'trirotaryvaldivia.cl',u'www.trirotaryvaldivia.cl',u'64.225.60.66',u'127.0.0.1']
+ALLOWED_HOSTS = [u'127.0.0.1', u'trirotaryvaldivia.cl', u'www.trirotaryvaldivia.cl', u'0.0.0.0']
 
 
 # Application definition
