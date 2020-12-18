@@ -33,7 +33,7 @@ SECRET_KEY = '6di8@p-)l7f_1vydq6!3-u@9dtq0qj=*6+09$039vdkuz=oq@7'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['64.225.60.66']
 
 
 # Application definition
